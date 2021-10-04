@@ -6,13 +6,14 @@ import androidx.paging.PagingData
 import androidx.paging.rxjava3.flowable
 import io.reactivex.rxjava3.core.Flowable
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
 import uz.mirsaidoff.scaliotest.Constants
 import uz.mirsaidoff.scaliotest.User
 
 @ExperimentalCoroutinesApi
 class UsersRepositoryImpl(private val pagingSourceFactory: UsersPagingSource.Factory) : UsersRepository {
 
-    override fun searchUsers(login: String): Flowable<PagingData<User>> {
+    override fun searchUsers(login: String): Flow<PagingData<User>> {
         return Pager(
             config = PagingConfig(
                 pageSize = Constants.PAGE_SIZE,
@@ -20,6 +21,6 @@ class UsersRepositoryImpl(private val pagingSourceFactory: UsersPagingSource.Fac
                 initialLoadSize = Constants.PAGE_SIZE * 2
             ),
             pagingSourceFactory = { pagingSourceFactory.create(login) }
-        ).flowable
+        ).flow
     }
 }

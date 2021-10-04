@@ -1,27 +1,20 @@
 package uz.mirsaidoff.scaliotest.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 import uz.mirsaidoff.scaliotest.User
 import uz.mirsaidoff.scaliotest.model.UsersRepository
 
 class ResultsViewModel(private val repo: UsersRepository) : ViewModel() {
 
-    private val _liveResults = MutableLiveData<List<User>>()
-    val liveResults: LiveData<List<User>>
-        get() = _liveResults
-
-    fun searchUsers(login: String?) {
-        login?.run {
-            repo.searchUsers("$this in:login")
-//                .subscribeOn(Schedulers.io())
-//                .subscribe(
-//                    { _liveResults.postValue(it.items!!) },
-//                    { Log.e("USERS", it.message.toString()) }
-//                )
-        }
+    fun searchUsers(login: String): Flow<PagingData<User>> {
+        return repo.searchUsers("$login in:login")
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(), PagingData.empty())
     }
 
     class Factory(private val repo: UsersRepository) : ViewModelProvider.Factory {

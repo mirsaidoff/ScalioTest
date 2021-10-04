@@ -7,4 +7,6 @@ class SearchResult(
     @SerializedName("total_count") val totalCount: Long?,
     @SerializedName("incomplete_results") val incompleteResults: Boolean?,
     @SerializedName("items") val items: List<User>?
-)
+) {
+    fun isSuccessful(): Boolean = message == null
+}
