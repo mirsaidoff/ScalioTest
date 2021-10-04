@@ -1,4 +1,4 @@
-package uz.mirsaidoff.scaliotest
+package uz.mirsaidoff.scaliotest.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -2,16 +2,13 @@ package uz.mirsaidoff.scaliotest.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import uz.mirsaidoff.scaliotest.Service
 import uz.mirsaidoff.scaliotest.databinding.FragmentSearchBinding
 import java.lang.ref.SoftReference
-import java.lang.ref.WeakReference
 
 class SearchFragment : Fragment() {
 

@@ -7,7 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import uz.mirsaidoff.scaliotest.R
-import uz.mirsaidoff.scaliotest.User
+import uz.mirsaidoff.scaliotest.model.User
 import uz.mirsaidoff.scaliotest.databinding.ItemUserBinding
 
 class UsersAdapter : PagingDataAdapter<User, UsersAdapter.ViewHolder>(UsersDiffUtilCallback) {

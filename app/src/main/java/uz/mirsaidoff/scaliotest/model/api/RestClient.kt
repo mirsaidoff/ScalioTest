@@ -1,8 +1,5 @@
-package uz.mirsaidoff.scaliotest
+package uz.mirsaidoff.scaliotest.model.api
 
-import android.app.Application
-import android.content.ContextWrapper
-import androidx.core.content.ContextCompat
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
@@ -32,8 +29,8 @@ object RestClient {
     }
 
     fun getInstance(): Retrofit {
-        if (this.instance == null) createInstance()
+        if (instance == null) createInstance()
 
-        return this.instance!!
+        return instance!!
     }
 }

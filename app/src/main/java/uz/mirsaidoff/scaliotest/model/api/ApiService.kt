@@ -1,7 +1,8 @@
-package uz.mirsaidoff.scaliotest
+package uz.mirsaidoff.scaliotest.model.api
 
 import retrofit2.http.GET
 import retrofit2.http.Query
+import uz.mirsaidoff.scaliotest.model.SearchResult
 
 interface ApiService {
 

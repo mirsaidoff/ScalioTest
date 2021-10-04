@@ -7,8 +7,8 @@ import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
-import uz.mirsaidoff.scaliotest.User
-import uz.mirsaidoff.scaliotest.model.UsersRepository
+import uz.mirsaidoff.scaliotest.model.User
+import uz.mirsaidoff.scaliotest.model.repo.UsersRepository
 
 class ResultsViewModel(private val repo: UsersRepository) : ViewModel() {
 

@@ -13,10 +13,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import uz.mirsaidoff.scaliotest.databinding.FragmentResultsBinding
-import uz.mirsaidoff.scaliotest.model.UsersRepository
+import uz.mirsaidoff.scaliotest.model.repo.UsersRepository
 
 class ResultsFragment : Fragment() {
 

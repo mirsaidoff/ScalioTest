@@ -1,17 +1,16 @@
-package uz.mirsaidoff.scaliotest
+package uz.mirsaidoff.scaliotest.model.api
 
 object Service {
     private var instance: ApiService? = null
 
     private fun createInstance() {
-        this.instance = RestClient
-            .getInstance()
+        instance = RestClient.getInstance()
             .create(ApiService::class.java)
     }
 
     fun getInstance(): ApiService {
-        if (this.instance == null) createInstance()
+        if (instance == null) createInstance()
 
-        return this.instance!!
+        return instance!!
     }
 }

@@ -1,6 +1,7 @@
-package uz.mirsaidoff.scaliotest
+package uz.mirsaidoff.scaliotest.model
 
 import com.google.gson.annotations.SerializedName
+import uz.mirsaidoff.scaliotest.model.User
 
 class SearchResult(
     @SerializedName("message") val message: String?,         //error message

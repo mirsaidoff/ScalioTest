@@ -4,9 +4,8 @@ import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import retrofit2.HttpException
-import uz.mirsaidoff.scaliotest.ApiService
-import uz.mirsaidoff.scaliotest.Service
-import uz.mirsaidoff.scaliotest.User
+import uz.mirsaidoff.scaliotest.model.api.ApiService
+import uz.mirsaidoff.scaliotest.model.api.Service
 
 class UsersPagingSource(
     private val service: ApiService,
