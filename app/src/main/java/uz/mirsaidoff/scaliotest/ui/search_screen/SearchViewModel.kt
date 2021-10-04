@@ -1,4 +1,4 @@
-package uz.mirsaidoff.scaliotest.ui
+package uz.mirsaidoff.scaliotest.ui.search_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -1,4 +1,4 @@
-package uz.mirsaidoff.scaliotest.ui
+package uz.mirsaidoff.scaliotest.ui.search_screen
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import uz.mirsaidoff.scaliotest.databinding.FragmentSearchBinding
+import uz.mirsaidoff.scaliotest.ui.Navigation
 import java.lang.ref.SoftReference
 
 class SearchFragment : Fragment() {
@@ -21,9 +22,9 @@ class SearchFragment : Fragment() {
         }
     }
 
-    private val vmFactory by lazy {
-        SearchViewModel.Factory()
-    }
+//    private val vmFactory by lazy {
+//        SearchViewModel.Factory()
+//    }
 
     private var navigation: SoftReference<Navigation?> = SoftReference(null)
 
@@ -32,7 +33,7 @@ class SearchFragment : Fragment() {
         if (context is Navigation) navigation = SoftReference(context)
     }
 
-    private val vm by viewModels<SearchViewModel> { vmFactory }
+//    private val vm by viewModels<SearchViewModel> { vmFactory }
     private lateinit var searchBinding: FragmentSearchBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

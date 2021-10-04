@@ -1,4 +1,4 @@
-package uz.mirsaidoff.scaliotest.ui
+package uz.mirsaidoff.scaliotest.ui.results_screen
 
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collectLatest
 import uz.mirsaidoff.scaliotest.databinding.FragmentResultsBinding
 import uz.mirsaidoff.scaliotest.model.repo.UsersRepository
+import uz.mirsaidoff.scaliotest.ui.UsersAdapter
 
 class ResultsFragment : Fragment() {
 

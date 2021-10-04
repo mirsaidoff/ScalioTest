@@ -3,6 +3,8 @@ package uz.mirsaidoff.scaliotest.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import uz.mirsaidoff.scaliotest.R
+import uz.mirsaidoff.scaliotest.ui.results_screen.ResultsFragment
+import uz.mirsaidoff.scaliotest.ui.search_screen.SearchFragment
 
 class MainActivity : AppCompatActivity(), Navigation {
 

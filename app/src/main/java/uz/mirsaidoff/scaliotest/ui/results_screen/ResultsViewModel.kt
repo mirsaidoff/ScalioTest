@@ -1,4 +1,4 @@
-package uz.mirsaidoff.scaliotest.ui
+package uz.mirsaidoff.scaliotest.ui.results_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
