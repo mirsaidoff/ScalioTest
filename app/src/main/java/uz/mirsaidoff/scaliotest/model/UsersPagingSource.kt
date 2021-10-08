@@ -1,9 +1,7 @@
 package uz.mirsaidoff.scaliotest.model
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import retrofit2.HttpException
 import uz.mirsaidoff.scaliotest.model.api.ApiService
 import uz.mirsaidoff.scaliotest.model.api.Service
 
@@ -36,8 +34,8 @@ class UsersPagingSource(
             } else {
                 LoadResult.Error(Throwable(response.message))
             }
-        } catch (e: HttpException) {
-            Log.e("ErrorLoading", e.message())
+        } catch (e: Exception) {
+//            Log.e("ErrorLoading", e.message.toString())
             LoadResult.Error(e)
         }
     }
