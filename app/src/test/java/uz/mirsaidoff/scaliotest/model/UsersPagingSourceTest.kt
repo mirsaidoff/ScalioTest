@@ -53,7 +53,7 @@ class UsersPagingSourceTest {
 
     @Throws(Exception::class)
     @Test
-    fun `reviews paging source load - failure - http error`() = runBlockingTest {
+    fun `users paging source load - failure - http error`() = runBlockingTest {
         val error = RuntimeException("404", Throwable())
         given(api.searchUsers(anyString(), anyInt(), anyInt())).willThrow(error)
         val expectedResult = PagingSource.LoadResult.Error<Int, User>(error)
@@ -69,7 +69,7 @@ class UsersPagingSourceTest {
     }
 
     @Test
-    fun `reviews paging source load - failure - received null`() = runBlockingTest {
+    fun `users paging source load - failure - received null`() = runBlockingTest {
         given(api.searchUsers(anyString(), anyInt(), anyInt())).willReturn(null)
         val expectedResult = PagingSource.LoadResult.Error<Int, User>(NullPointerException())
         assertEquals(
@@ -85,7 +85,7 @@ class UsersPagingSourceTest {
     }
 
     @Test
-    fun `reviews paging source refresh - success`() = runBlockingTest {
+    fun `users paging source refresh - success`() = runBlockingTest {
         given(api.searchUsers(anyString(), anyInt(), anyInt())).willReturn(mockResponse)
         val expectedResult = PagingSource.LoadResult.Page(
             data = mockResponse.items ?: emptyList(),
@@ -104,7 +104,7 @@ class UsersPagingSourceTest {
     }
 
     @Test
-    fun `reviews paging source refresh - unsuccessful`() = runBlockingTest {
+    fun `users paging source refresh - unsuccessful`() = runBlockingTest {
         given(api.searchUsers(anyString(), anyInt(), anyInt())).willReturn(mockUnsuccessfulResponse)
         val expectedResult = PagingSource.LoadResult.Error<Int, User>(Throwable(mockUnsuccessfulResponse.message))
         assertEquals(
